@@ -1,4 +1,18 @@
 {
-  "latest": null,
-  "releases": []
+  "latest": {
+    "version": "0.1.0",
+    "publishedAt": "2. 11. 2026.",
+    "downloadUrl": "https://github.com/ugrinovs/citac-identifikacionih-podataka/releases/download/v0.1.0/CIP-0.1.dmg",
+    "size": "3.2 MiB",
+    "notes": "ČIP (Čitač identifikacionih podataka) je besplatna, nezavisna macOS aplikacija za ličnu kartu Srbije.\r\n\r\nMogućnosti\r• Čitanje ličnih i dokumentnih podataka i fotografije; štampa ili čuvanje ispisa kao PDF.\r• Pregled sertifikata za prijavu i potpis. CryptoTokenKit dodatak izlaže identitete macOS-u; prijava je isprobana u Chrome-u, Safari-ju i Firefox-u na testiranom Macu.\r• Dodavanje MUP CA lanca uz potvrdu korisnika i provera spremnosti za prijavu u pregledaču.\r• Potpisivanje PDF-a Sign ključem sa kartice kao PAdES B-B bez vidljivog pečata, kao i provera potpisa i trenutnog statusa opoziva preko MUP CRL lista. Privatni ključ ostaje na kartici, a PIN se unosi u macOS dijalogu.\r\n\r\nInstalacija\r\nPotreban je Mac sa Apple Silicon procesorom i macOS 14 ili noviji, kompatibilan čitač pametnih kartica i lična karta sa čipom. Preuzmi `CIP-0.1.dmg`, proveri SHA-256 pomoću priloženog `CIP-0.1.dmg.sha256`, pa prevuci `LicnaKarta.app` u Applications.\r\n\r\nPrva verzija **nema Apple Developer ID potpis ni notarizaciju**. macOS može blokirati prvo otvaranje; u System Settings → Privacy & Security izaberi Open Anyway samo za provereni paket sa ove stranice. Ne isključuj Gatekeeper.\r\n\r\nPotpisani PDF **nema vremenski žig**; ovaj paket ne pruža PAdES B-T/LT/LTA. Provera na čistom Macu i Intel podrška planirane su za naredna izdanja. Aplikacija nije proizvod MUP-a.\r\n\r\nSHA-256 (`CIP-0.1.dmg`): `4a05f18cbc60d5daa0e80a05668368c6a3b708106a5691e6b4195b93fb194f71`"
+  },
+  "releases": [
+    {
+      "version": "0.1.0",
+      "publishedAt": "2. 11. 2026.",
+      "downloadUrl": "https://github.com/ugrinovs/citac-identifikacionih-podataka/releases/download/v0.1.0/CIP-0.1.dmg",
+      "size": "3.2 MiB",
+      "notes": "ČIP (Čitač identifikacionih podataka) je besplatna, nezavisna macOS aplikacija za ličnu kartu Srbije.\r\n\r\nMogućnosti\r• Čitanje ličnih i dokumentnih podataka i fotografije; štampa ili čuvanje ispisa kao PDF.\r• Pregled sertifikata za prijavu i potpis. CryptoTokenKit dodatak izlaže identitete macOS-u; prijava je isprobana u Chrome-u, Safari-ju i Firefox-u na testiranom Macu.\r• Dodavanje MUP CA lanca uz potvrdu korisnika i provera spremnosti za prijavu u pregledaču.\r• Potpisivanje PDF-a Sign ključem sa kartice kao PAdES B-B bez vidljivog pečata, kao i provera potpisa i trenutnog statusa opoziva preko MUP CRL lista. Privatni ključ ostaje na kartici, a PIN se unosi u macOS dijalogu.\r\n\r\nInstalacija\r\nPotreban je Mac sa Apple Silicon procesorom i macOS 14 ili noviji, kompatibilan čitač pametnih kartica i lična karta sa čipom. Preuzmi `CIP-0.1.dmg`, proveri SHA-256 pomoću priloženog `CIP-0.1.dmg.sha256`, pa prevuci `LicnaKarta.app` u Applications.\r\n\r\nPrva verzija **nema Apple Developer ID potpis ni notarizaciju**. macOS može blokirati prvo otvaranje; u System Settings → Privacy & Security izaberi Open Anyway samo za provereni paket sa ove stranice. Ne isključuj Gatekeeper.\r\n\r\nPotpisani PDF **nema vremenski žig**; ovaj paket ne pruža PAdES B-T/LT/LTA. Provera na čistom Macu i Intel podrška planirane su za naredna izdanja. Aplikacija nije proizvod MUP-a.\r\n\r\nSHA-256 (`CIP-0.1.dmg`): `4a05f18cbc60d5daa0e80a05668368c6a3b708106a5691e6b4195b93fb194f71`"
+    }
+  ]
 }

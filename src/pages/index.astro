@@ -2,8 +2,10 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import DownloadSplit from '../components/DownloadSplit.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
+import releaseData from '../data/releases.json';
 
 const base = import.meta.env.BASE_URL;
+const currentVersion = releaseData.latest?.version;
 ---
 
 <SiteLayout
@@ -17,7 +19,7 @@ const base = import.meta.env.BASE_URL;
         <h1>ČIP. Dokumenta sa čipom na Macu.</h1>
         <p class="lead">ČIP je čitač identifikacionih podataka. Počinjemo sa ličnom kartom: pročitaj podatke, pripremi prijavu u pregledaču i potpiši ili proveri PDF. Saobraćajna dozvola i zdravstvena kartica su u planu.</p>
         <DownloadSplit />
-        <p class="hero-meta">Besplatno · Apple Silicon · macOS 14 ili noviji · prva javna verzija je u pripremi</p>
+        <p class="hero-meta">Besplatno · Apple Silicon · macOS 14 ili noviji {currentVersion && `· verzija ${currentVersion}`}</p>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="icon-stage">
@@ -46,7 +48,7 @@ const base = import.meta.env.BASE_URL;
   <section class="section steps-section">
     <div class="wrap">
       <h2>Početak rada</h2>
-      <p class="section-intro">Kada javno izdanje bude spremno, prvi koraci izgledaće ovako.</p>
+      <p class="section-intro">Za početak su dovoljni Mac, kompatibilan čitač i lična karta sa čipom.</p>
       <div class="steps">
         <div class="step"><h3>Preuzmi aplikaciju</h3><p>Otvori paket sa strane Verzije, premesti aplikaciju u Applications i prati uputstvo za prvo pokretanje.</p></div>
         <div class="step"><h3>Ubaci ličnu kartu</h3><p>Poveži kompatibilan čitač i izaberi ga u aplikaciji. PIN unosiš samo u macOS dijalogu kada je potreban.</p></div>
@@ -58,7 +60,7 @@ const base = import.meta.env.BASE_URL;
 
   <div class="wrap">
     <section class="cta-band">
-      <div><h2>Spremno za tvoj Mac</h2><p>Prva javna verzija stiže nakon završne provere funkcija i instalacije.</p></div>
+      <div><h2>Spremno za tvoj Mac</h2><p>Preuzmi prvo javno izdanje i prati uputstvo za instalaciju.</p></div>
       <DownloadSplit />
     </section>
   </div>

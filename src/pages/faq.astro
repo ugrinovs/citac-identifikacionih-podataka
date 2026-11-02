@@ -6,8 +6,8 @@ import SiteLayout from '../layouts/SiteLayout.astro';
   <header class="page-heading"><div class="wrap"><h1>Česta pitanja</h1><p>Kratki odgovori o čitaču, sertifikatima, poverenju i PDF potpisu.</p></div></header>
   <section class="section"><div class="wrap faq-list">
     <div class="faq-item"><h2>Koje dokumente ČIP podržava?</h2><p>Prvo javno izdanje fokusirano je na ličnu kartu Srbije. Podrška za saobraćajnu dozvolu i zdravstvenu karticu je u planu; biće navedena u opisu verzije kada bude spremna.</p></div>
-    <div class="faq-item"><h2>Da li je aplikacija besplatna?</h2><p>Da. Javno izdanje biće besplatno za preuzimanje i korišćenje.</p></div>
-    <div class="faq-item"><h2>Na kojim Mac računarima radi prvo izdanje?</h2><p>Planirano prvo izdanje je za Apple Silicon Mac sa macOS 14 ili novijim. Intel Mac je u planu za narednu verziju.</p></div>
+    <div class="faq-item"><h2>Da li je aplikacija besplatna?</h2><p>Da. Javno izdanje je besplatno za preuzimanje i korišćenje.</p></div>
+    <div class="faq-item"><h2>Na kojim Mac računarima radi prvo izdanje?</h2><p>Verzija 0.1 radi na Apple Silicon Macu sa macOS 14 ili novijim. Intel Mac je u planu za narednu verziju.</p></div>
     <div class="faq-item"><h2>Da li je ovo zvanična MUP aplikacija?</h2><p>Ne. ČIP je nezavisna macOS aplikacija; prvo javno izdanje radi sa ličnom kartom Srbije. Sertifikate na kartici izdaje nadležni izdavalac; aplikacija ih ne izdaje.</p></div>
     <div class="faq-item"><h2>Da li moram ručno da podesim poverenje u MUP sertifikate?</h2><p>Aplikacija proverava MUP CA 4 lanac. Ako nedostaje, može da ga doda nakon tvoje izričite potvrde; macOS zatim traži sistemsku autentikaciju. Promena poverenja važi i za druge aplikacije tog korisnika.</p></div>
     <div class="faq-item"><h2>Koji sertifikat služi za potpisivanje?</h2><p>Za dokumente se koristi Sign sertifikat. Auth sertifikat služi za prijavu. Za potpisivanje je potreban Sign sertifikat i odgovarajući privatni ključ na kartici.</p></div>
@@ -15,6 +15,6 @@ import SiteLayout from '../layouts/SiteLayout.astro';
     <div class="faq-item"><h2>Da li radi u svim pregledačima?</h2><p>Prijava sa testiranom karticom potvrđena je u Chrome-u, Safariju i Firefox-u na razvojnom Macu. Ponašanje može da zavisi od verzije pregledača, kartice i podešavanja poverenja.</p></div>
     <div class="faq-item"><h2>Da li PDF potpis ima vremenski žig?</h2><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
     <div class="faq-item"><h2>Zašto macOS može blokirati prvo otvaranje?</h2><p>Prva izdanja neće biti potpisana Apple Developer ID sertifikatom ni notarizovana. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj korake u uputstvu; ne isključuj Gatekeeper za ceo računar.</p></div>
-    <div class="faq-item"><h2>Zašto preuzimanje još nije dostupno?</h2><p>Razvojni build nije namenjen javnoj distribuciji. Vremenski žig PDF potpisa i instalacioni paket još treba završiti i proveriti.</p></div>
+    <div class="faq-item"><h2>Kako da proverim preuzeti paket?</h2><p>Uz DMG je objavljen SHA-256 otisak. U Terminalu pokreni <code>shasum -a 256 CIP-0.1.dmg</code> i uporedi rezultat sa otiskom na strani izdanja.</p></div>
   </div></section>
 </SiteLayout>

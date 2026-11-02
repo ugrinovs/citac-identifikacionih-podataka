@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
         <li>Pokušaj da pokreneš aplikaciju. Ako je macOS blokira, otvori <strong>System Settings → Privacy &amp; Security</strong>, pronađi upozorenje za aplikaciju i izaberi <strong>Open Anyway</strong>, pa potvrdi otvaranje.</li>
         <li>Posle prve instalacije ili ažuriranja izvadi i vrati karticu da je macOS ponovo prepozna.</li>
       </ol>
-      <p>Prva izdanja neće imati Apple Developer ID potpis ni notarizaciju, pa macOS ne može da potvrdi identitet izdavača. Bezbednosni izuzetak napravi samo ako si paket preuzeo sa naše strane Verzije i odlučiš da veruješ ovom izdanju. Dok paketa nema na toj strani, preuzimanje nije dostupno.</p>
+      <p>Verzija 0.1 nema Apple Developer ID potpis ni notarizaciju, pa macOS ne može da potvrdi identitet izdavača. Bezbednosni izuzetak napravi samo ako si paket preuzeo sa naše strane Verzije, proverio njegov SHA-256 otisak i odlučio da veruješ ovom izdanju.</p>
 
       <h2 id="citanje">Čitanje kartice</h2>
       <ol>
@@ -35,7 +35,7 @@ const base = import.meta.env.BASE_URL;
       <h2 id="pdf">Potpisivanje i provera PDF-a</h2>
       <p>Za potpis izaberi ulazni PDF i mesto za novi, potpisani primerak. Aplikacija koristi <strong>Sign sertifikat</strong> sa izabrane kartice. PIN unosiš u macOS dijalogu, ne na ovom sajtu.</p>
       <p>Posle čuvanja aplikacija proverava integritet i podatke o potpisniku. Postojeći PDF možeš da proveriš zasebnom radnjom, bez novog potpisivanja.</p>
-      <div class="notice"><p><strong>Javno izdanje:</strong> potpisivanje sa vremenskim žigom je uslov za objavu. Stanje te funkcije biće opisano uz izdanje; trenutni razvojni build nije javni paket za preuzimanje.</p></div>
+      <div class="notice"><p><strong>Vremenski žig:</strong> verzija 0.1 pravi PAdES B-B potpis bez vremenskog žiga. Za potpis sa potvrđenim vremenom potreban je zaseban servis; ta mogućnost nije uključena u ovo izdanje.</p></div>
 
       <h2 id="pomoc">Ako nešto ne radi</h2>
       <p>Prvo proveri da li je kartica pravilno umetnuta, da li se čitač pojavljuje u aplikaciji i da li je prikaz <strong>Prijava u pregledaču</strong> označio MUP lanac kao pouzdan. Za najčešća pitanja pogledaj <a href={`${base}faq/`}>FAQ</a>.</p>

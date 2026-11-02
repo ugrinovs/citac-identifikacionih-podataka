@@ -1,6 +1,6 @@
 # ČIP — javni sajt
 
-Statički Astro sajt za **ČIP (Čitač identifikacionih podataka)**, besplatnu macOS aplikaciju. Prvo javno izdanje fokusirano je na ličnu kartu Srbije; saobraćajna dozvola i zdravstvena kartica su planirane. Javni repozitorijum sajta i paketa biće `ugrinovs/citac-identifikacionih-podataka`; izvorni kod aplikacije ostaje u privatnom `ugrinovs/citaci` repozitorijumu.
+Statički Astro sajt za **ČIP (Čitač identifikacionih podataka)**, besplatnu macOS aplikaciju. Prvo javno izdanje fokusirano je na ličnu kartu Srbije; saobraćajna dozvola i zdravstvena kartica su planirane. Javni repozitorijum sajta i paketa je `ugrinovs/citac-identifikacionih-podataka`; izvorni kod aplikacije ostaje u privatnom `ugrinovs/citaci` repozitorijumu.
 
 ## Lokalno
 
@@ -11,7 +11,7 @@ npm run build
 npm run preview
 ```
 
-Tekst strana je u `src/pages/`, izgled u `src/styles/global.css`. Podaci o izdanjima su u `src/data/releases.json`. Dok ne postoji javni Release sa `.dmg` paketom, dugme za preuzimanje prikazuje „Preuzimanje uskoro”.
+Tekst strana je u `src/pages/`, izgled u `src/styles/global.css`. Podaci o izdanjima se osvežavaju iz javnih GitHub Releases tokom objave sajta. Ako nema stabilnog izdanja sa `.dmg` paketom, dugme za preuzimanje prikazuje „Preuzimanje uskoro”.
 
 ## GitHub Pages
 
