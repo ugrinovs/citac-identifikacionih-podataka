@@ -1,0 +1,23 @@
+---
+import screenshots from '../data/screenshots.json';
+const base = import.meta.env.BASE_URL;
+interface Screenshot { file: string; alt: string; caption: string; }
+const items = screenshots as Screenshot[];
+---
+
+{items.length > 0 && (
+  <section class="section screenshot-section">
+    <div class="wrap">
+      <h2>Pogledaj aplikaciju</h2>
+      <p class="section-intro">Stvarni snimci ekrana iz javnog izdanja, bez ličnih podataka sa dokumenata.</p>
+      <div class="screenshot-grid">
+        {items.map((shot) => (
+          <figure class="screenshot-item">
+            <img src={`${base}screenshots/${shot.file}`} alt={shot.alt} loading="lazy" />
+            <figcaption>{shot.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

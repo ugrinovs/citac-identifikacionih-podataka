@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import releaseData from '../data/releases.json';
+
+interface Release { version: string; publishedAt: string; downloadUrl: string; notes: string; }
+const releases = releaseData.releases as Release[];
+---
+
+<SiteLayout title="Šta je novo" description="Promene u svakom javnom izdanju ČIP-a za macOS.">
+  <header class="page-heading"><div class="wrap"><h1>Šta je novo</h1><p>Pregled promena po verzijama, napisan za ljude koji koriste aplikaciju.</p></div></header>
+  <section class="section"><div class="wrap">
+    {releases.length ? <div class="release-list">{releases.map((release) => <article class="release-card"><h2>Verzija {release.version}</h2><p>Objavljeno {release.publishedAt}</p><div class="release-notes">{release.notes}</div></article>)}</div> : <div class="empty-state"><h2>Još nema javnih izdanja</h2><p>Kada objavimo prvu verziju, ovde će biti opisane nove funkcije i ispravke.</p></div>}
+  </div></section>
+</SiteLayout>

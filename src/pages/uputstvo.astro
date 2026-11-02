@@ -1,0 +1,48 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<SiteLayout title="Uputstvo" description="Koraci za instalaciju i korišćenje ČIP-a na Macu." current="guide">
+  <header class="page-heading"><div class="wrap"><h1>Uputstvo</h1><p>Od prve instalacije do čitanja kartice, prijave u pregledaču i rada sa PDF dokumentima.</p></div></header>
+  <div class="wrap content-layout">
+    <article class="article">
+      <h2 id="pre">Pre nego što počneš</h2>
+      <p>Za prvo javno izdanje potreban je Mac sa Apple Silicon procesorom i macOS 14 ili novijim, kompatibilan čitač pametnih kartica i lična karta Srbije. Za potpisivanje PDF-a na kartici mora postojati važeći <strong>sertifikat za potpis</strong>; sertifikat za prijavu služi drugoj nameni.</p>
+      <div class="notice"><p><strong>Podrška za kartice:</strong> dosadašnje provere urađene su na jednoj vrsti kartice. Podrška za Intel Mac planirana je za neku od narednih verzija.</p></div>
+
+      <h2 id="instalacija">Instalacija</h2>
+      <ol>
+        <li>Preuzmi najnoviji instalacioni paket sa <a href={`${base}verzije/`}>strane Verzije</a>.</li>
+        <li>Otvori paket i premesti aplikaciju u <strong>Applications</strong>.</li>
+        <li>Pokušaj da pokreneš aplikaciju. Ako je macOS blokira, otvori <strong>System Settings → Privacy &amp; Security</strong>, pronađi upozorenje za aplikaciju i izaberi <strong>Open Anyway</strong>, pa potvrdi otvaranje.</li>
+        <li>Posle prve instalacije ili ažuriranja izvadi i vrati karticu da je macOS ponovo prepozna.</li>
+      </ol>
+      <p>Prva izdanja neće imati Apple Developer ID potpis ni notarizaciju, pa macOS ne može da potvrdi identitet izdavača. Bezbednosni izuzetak napravi samo ako si paket preuzeo sa naše strane Verzije i odlučiš da veruješ ovom izdanju. Dok paketa nema na toj strani, preuzimanje nije dostupno.</p>
+
+      <h2 id="citanje">Čitanje kartice</h2>
+      <ol>
+        <li>Poveži čitač sa Macom i ubaci ličnu kartu.</li>
+        <li>Izaberi čitač u bočnoj traci aplikacije.</li>
+        <li>Otvori prikaz podataka ili sertifikata i pokreni čitanje.</li>
+      </ol>
+      <p>Privatni ključevi ne napuštaju karticu. Sam pregled javnih sertifikata ne traži potpisivanje.</p>
+
+      <h2 id="pregledac">Prijava u pregledaču</h2>
+      <p>U aplikaciji otvori <strong>Prijava u pregledaču</strong>. Tu vidiš da li macOS prepoznaje token i da li su MUP CA sertifikati instalirani i pouzdani.</p>
+      <p>Ako lanac poverenja nedostaje, izaberi <strong>Dodaj MUP CA lanac…</strong>. Aplikacija će tražiti tvoju potvrdu, a macOS može zatražiti sistemsku autentikaciju. Zatim ponovo proveri status i pokreni novu prijavu na portalu. Ako je Chrome bio otvoren pre instalacije dodatka, potpuno ga zatvori i otvori ponovo.</p>
+
+      <h2 id="pdf">Potpisivanje i provera PDF-a</h2>
+      <p>Za potpis izaberi ulazni PDF i mesto za novi, potpisani primerak. Aplikacija koristi <strong>Sign sertifikat</strong> sa izabrane kartice. PIN unosiš u macOS dijalogu, ne na ovom sajtu.</p>
+      <p>Posle čuvanja aplikacija proverava integritet i podatke o potpisniku. Postojeći PDF možeš da proveriš zasebnom radnjom, bez novog potpisivanja.</p>
+      <div class="notice"><p><strong>Javno izdanje:</strong> potpisivanje sa vremenskim žigom je uslov za objavu. Stanje te funkcije biće opisano uz izdanje; trenutni razvojni build nije javni paket za preuzimanje.</p></div>
+
+      <h2 id="pomoc">Ako nešto ne radi</h2>
+      <p>Prvo proveri da li je kartica pravilno umetnuta, da li se čitač pojavljuje u aplikaciji i da li je prikaz <strong>Prijava u pregledaču</strong> označio MUP lanac kao pouzdan. Za najčešća pitanja pogledaj <a href={`${base}faq/`}>FAQ</a>.</p>
+    </article>
+    <nav class="on-page" aria-label="Na ovoj strani">
+      <strong>Na ovoj strani</strong>
+      <a href="#pre">Pre nego što počneš</a><a href="#instalacija">Instalacija</a><a href="#citanje">Čitanje kartice</a><a href="#pregledac">Prijava u pregledaču</a><a href="#pdf">PDF potpis</a><a href="#pomoc">Pomoć</a>
+    </nav>
+  </div>
+</SiteLayout>
