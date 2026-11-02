@@ -128,8 +128,16 @@ a.download-primary:hover { background: #174eaf; }
 .release-list { display: grid; gap: 17px; }
 .release-card { padding: 26px; border: 1px solid #e0e9f5; border-radius: 15px; background: #fff; }
 .release-card h2 { margin: 0 0 7px; font-size: 1.4rem; color: #183961; }
-.release-card p { margin: 0 0 16px; color: #5c7088; }
-.release-card .release-notes { white-space: pre-wrap; line-height: 1.65; color: #405a77; }
+.release-card > p { margin: 0 0 16px; color: #5c7088; }
+.release-card .release-notes { line-height: 1.65; color: #405a77; }
+.release-notes > :first-child { margin-top: 0; }
+.release-notes > :last-child { margin-bottom: 0; }
+.release-notes h3 { margin: 24px 0 10px; font-size: 1.1rem; color: #183961; }
+.release-notes p { margin: 0 0 14px; }
+.release-notes ul { margin: 0 0 18px; padding-left: 1.5rem; }
+.release-notes li + li { margin-top: 7px; }
+.release-notes code { padding: 2px 5px; border-radius: 4px; background: #edf2fa; color: #183961; font-size: .9em; overflow-wrap: anywhere; }
+.release-notes strong { color: #183961; }
 .release-card a { color: #245dc5; font-weight: 650; }
 
 .site-footer { background: #edf3fb; border-top: 1px solid #dbe5f1; }

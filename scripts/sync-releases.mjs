@@ -28,11 +28,7 @@ const releases = raw
       publishedAt: new Intl.DateTimeFormat('sr-RS', { dateStyle: 'medium' }).format(new Date(release.published_at)),
       downloadUrl: installer.browser_download_url,
       size: `${(installer.size / 1024 / 1024).toFixed(1)} MiB`,
-      notes: (release.body || 'Nema beleški za ovo izdanje.')
-        .replace(/^#{1,6}\s+/gm, '')
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-        .replace(/^\s*[-*]\s+/gm, '• ')
-        .trim(),
+      notes: (release.body || 'Nema beleški za ovo izdanje.').trim(),
     };
   })
   .filter(Boolean);

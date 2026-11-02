@@ -10,6 +10,10 @@
     "sync:releases": "node scripts/sync-releases.mjs"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
     "astro": "^7.3.8"
+  },
+  "dependencies": {
+    "markdown-it": "^15.0.3"
   }
 }
