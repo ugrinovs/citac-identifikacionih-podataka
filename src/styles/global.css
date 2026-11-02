@@ -33,10 +33,11 @@ main { flex: 1; }
 .header-inner { min-height: 82px; display: flex; align-items: center; gap: 34px; }
 .brand { flex-shrink: 0; display: inline-flex; align-items: center; gap: 11px; color: #153563; font-weight: 720; letter-spacing: -.03em; text-decoration: none; font-size: 1.08rem; }
 .brand img { border-radius: 10px; }
-.site-header nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
-.site-header nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 13px; border-radius: 10px; color: #536780; text-decoration: none; font-size: .93rem; font-weight: 580; }
-.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: #184ba6; background: #e9f1ff; }
+.site-header .desktop-nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.site-header .desktop-nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 13px; border-radius: 10px; color: #536780; text-decoration: none; font-size: .93rem; font-weight: 580; }
+.site-header .desktop-nav a:hover, .site-header .desktop-nav a[aria-current="page"] { color: #184ba6; background: #e9f1ff; }
 .header-download { margin-left: 10px; }
+.mobile-actions { display: none; }
 
 .download-split { display: inline-flex; align-items: stretch; position: relative; border-radius: 13px; background: var(--color-link); color: #fff; box-shadow: 0 10px 25px rgba(34,82,170,.18); }
 .download-primary { min-height: 52px; padding: 0 20px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 680; white-space: nowrap; border-radius: 13px 0 0 13px; }
@@ -188,10 +189,26 @@ a.download-primary:hover { background: #174eaf; }
   .hero-visual { min-height: 0; max-width: 340px; width: 80%; margin: 23px auto 0; }
 }
 @media (max-width: 700px) {
+  html { scroll-padding-top: 82px; }
   .wrap { width: min(100% - 36px, 1140px); }
-  .header-inner { min-height: 72px; flex-wrap: wrap; justify-content: space-between; padding: 13px 0; }
-  .site-header nav { width: 100%; justify-content: flex-start; margin: 0 -7px; }
-  .site-header nav a { min-height: 44px; padding: 8px 10px; font-size: .9rem; }
+  .site-header { position: sticky; top: 0; }
+  .header-inner { min-height: 64px; justify-content: space-between; padding: 8px 0; }
+  .site-header .desktop-nav { display: none; }
+  .mobile-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+  .mobile-download { min-height: 44px; display: inline-flex; align-items: center; padding: 0 15px; border-radius: 11px; background: #e9f1ff; color: #184ba6; font-size: .9rem; font-weight: 680; text-decoration: none; }
+  .mobile-download:hover, .mobile-download:active { background: #dce9ff; }
+  .mobile-menu summary { list-style: none; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #d8e4f4; border-radius: 11px; background: #fff; cursor: pointer; }
+  .mobile-menu summary::-webkit-details-marker { display: none; }
+  .mobile-menu[open] summary { background: #e9f1ff; border-color: #bdd2f4; }
+  .menu-icon, .menu-icon::before, .menu-icon::after { display: block; width: 18px; height: 2px; border-radius: 2px; background: #284d7d; }
+  .menu-icon { position: relative; }
+  .menu-icon::before, .menu-icon::after { content: ""; position: absolute; left: 0; }
+  .menu-icon::before { top: -6px; }
+  .menu-icon::after { top: 6px; }
+  .mobile-menu nav { position: absolute; top: calc(100% + 1px); right: 0; z-index: 30; display: grid; gap: 3px; width: min(310px, calc(100vw - 36px)); padding: 10px; border: 1px solid #dce6f3; border-radius: 0 0 15px 15px; background: #fff; box-shadow: 0 16px 28px rgba(22,54,97,.15); }
+  .mobile-menu nav a { min-height: 48px; display: flex; align-items: center; padding: 8px 13px; border-radius: 9px; color: #254465; font-size: 1rem; font-weight: 580; text-decoration: none; }
+  .mobile-menu nav a:hover, .mobile-menu nav a:active, .mobile-menu nav a[aria-current="page"] { background: #e9f1ff; color: #184ba6; }
+  .mobile-menu nav a:nth-last-child(2) { border-top: 1px solid #e2eaf5; border-radius: 0; margin-top: 4px; padding-top: 12px; }
   .hero { padding: 55px 0 46px; }
   .hero h1 { font-size: clamp(2.65rem,11.5vw,4.4rem); }
   .section { padding: 60px 0; }

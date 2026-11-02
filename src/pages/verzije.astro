@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL;
 const releases = releaseData.releases as Release[];
 ---
 
-<SiteLayout title="Sve verzije" description="Preuzmi aktuelno i prethodna izdanja ČIP-a za macOS.">
+<SiteLayout title="Sve verzije" description="Preuzmi aktuelno i prethodna izdanja ČIP-a za macOS." current="releases">
   <header class="page-heading"><div class="wrap"><h1>Sve verzije</h1><p>Instalacioni paketi, datumi izdanja i otisci za proveru. Pre otvaranja paketa pročitaj <a href={`${base}uputstvo/#instalacija`}>uputstvo za instalaciju</a>.</p></div></header>
   <section class="section"><div class="wrap">
     {releases.length ? (

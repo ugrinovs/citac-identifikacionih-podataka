@@ -14,7 +14,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const links = [
   { label: 'Početna', href: base, id: 'home' },
   { label: 'Uputstvo', href: `${base}uputstvo/`, id: 'guide' },
-  { label: 'FAQ', href: `${base}faq/`, id: 'faq' },
+  { label: 'Česta pitanja', href: `${base}faq/`, id: 'faq' },
 ];
 ---
 
@@ -42,7 +42,7 @@ const links = [
             <img src={`${base}icon-64.png`} width="38" height="38" alt="" />
             <span>ČIP</span>
           </a>
-          <nav aria-label="Glavna navigacija">
+          <nav class="desktop-nav" aria-label="Glavna navigacija">
             {
               links.map((link) => (
                 <a href={link.href} aria-current={current === link.id ? 'page' : undefined}>{link.label}</a>
@@ -50,6 +50,19 @@ const links = [
             }
           </nav>
           <div class="header-download"><DownloadSplit compact /></div>
+          <div class="mobile-actions">
+            <a class="mobile-download" href={`${base}verzije/`} aria-current={current === 'releases' ? 'page' : undefined}>Preuzmi</a>
+            <details class="mobile-menu">
+              <summary aria-label="Meni"><span class="menu-icon" aria-hidden="true"></span></summary>
+              <nav aria-label="Mobilna navigacija">
+                {links.map((link) => (
+                  <a href={link.href} aria-current={current === link.id ? 'page' : undefined}>{link.label}</a>
+                ))}
+                <a href={`${base}verzije/`} aria-current={current === 'releases' ? 'page' : undefined}>Verzije i instalacija</a>
+                <a href={`${base}promene/`}>Šta je novo</a>
+              </nav>
+            </details>
+          </div>
         </div>
       </header>
       <main id="main"><slot /></main>
@@ -71,3 +84,18 @@ const links = [
     </div>
   </body>
 </html>
+
+<script>
+  const mobileMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  if (mobileMenu) {
+    document.addEventListener('pointerdown', (event) => {
+      if (!mobileMenu.contains(event.target as Node)) mobileMenu.open = false;
+    });
+    mobileMenu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        mobileMenu.open = false;
+        mobileMenu.querySelector('summary')?.focus();
+      }
+    });
+  }
+</script>
