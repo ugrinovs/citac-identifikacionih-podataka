@@ -6,6 +6,10 @@ const base = import.meta.env.BASE_URL;
 <SiteLayout title="Uputstvo" description="Koraci za instalaciju i korišćenje ČIP-a na Macu." current="guide">
   <header class="page-heading"><div class="wrap"><h1>Uputstvo</h1><p>Od prve instalacije do čitanja kartice, prijave u pregledaču i rada sa PDF dokumentima.</p></div></header>
   <div class="wrap content-layout">
+    <nav class="on-page" aria-label="Na ovoj strani">
+      <strong>Na ovoj strani</strong>
+      <a href="#pre">Pre nego što počneš</a><a href="#instalacija">Instalacija</a><a href="#citanje">Čitanje kartice</a><a href="#pregledac">Prijava u pregledaču</a><a href="#pdf">PDF potpis</a><a href="#pomoc">Pomoć</a>
+    </nav>
     <article class="article">
       <h2 id="pre">Pre nego što počneš</h2>
       <p>Za prvo javno izdanje potreban je Mac sa Apple Silicon procesorom i macOS 14 ili novijim, kompatibilan čitač pametnih kartica i lična karta Srbije. Za potpisivanje PDF-a na kartici mora postojati važeći <strong>sertifikat za potpis</strong>; sertifikat za prijavu služi drugoj nameni.</p>
@@ -40,9 +44,5 @@ const base = import.meta.env.BASE_URL;
       <h2 id="pomoc">Ako nešto ne radi</h2>
       <p>Prvo proveri da li je kartica pravilno umetnuta, da li se čitač pojavljuje u aplikaciji i da li je prikaz <strong>Prijava u pregledaču</strong> označio MUP lanac kao pouzdan. Za najčešća pitanja pogledaj <a href={`${base}faq/`}>FAQ</a>.</p>
     </article>
-    <nav class="on-page" aria-label="Na ovoj strani">
-      <strong>Na ovoj strani</strong>
-      <a href="#pre">Pre nego što počneš</a><a href="#instalacija">Instalacija</a><a href="#citanje">Čitanje kartice</a><a href="#pregledac">Prijava u pregledaču</a><a href="#pdf">PDF potpis</a><a href="#pomoc">Pomoć</a>
-    </nav>
   </div>
 </SiteLayout>

@@ -1,20 +1,69 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <SiteLayout title="Česta pitanja" description="Odgovori na najčešća pitanja o ČIP-u, čitaču identifikacionih podataka za Mac." current="faq">
   <header class="page-heading"><div class="wrap"><h1>Česta pitanja</h1><p>Kratki odgovori o čitaču, sertifikatima, poverenju i PDF potpisu.</p></div></header>
-  <section class="section"><div class="wrap faq-list">
-    <div class="faq-item"><h2>Koje dokumente ČIP podržava?</h2><p>Prvo javno izdanje fokusirano je na ličnu kartu Srbije. Podrška za saobraćajnu dozvolu i zdravstvenu karticu je u planu; biće navedena u opisu verzije kada bude spremna.</p></div>
-    <div class="faq-item"><h2>Da li je aplikacija besplatna?</h2><p>Da. Javno izdanje je besplatno za preuzimanje i korišćenje.</p></div>
-    <div class="faq-item"><h2>Na kojim Mac računarima radi prvo izdanje?</h2><p>Verzija 0.1 radi na Apple Silicon Macu sa macOS 14 ili novijim. Intel Mac je u planu za narednu verziju.</p></div>
-    <div class="faq-item"><h2>Da li je ovo zvanična MUP aplikacija?</h2><p>Ne. ČIP je nezavisna macOS aplikacija; prvo javno izdanje radi sa ličnom kartom Srbije. Sertifikate na kartici izdaje nadležni izdavalac; aplikacija ih ne izdaje.</p></div>
-    <div class="faq-item"><h2>Da li moram ručno da podesim poverenje u MUP sertifikate?</h2><p>Aplikacija proverava MUP CA 4 lanac. Ako nedostaje, može da ga doda nakon tvoje izričite potvrde; macOS zatim traži sistemsku autentikaciju. Promena poverenja važi i za druge aplikacije tog korisnika.</p></div>
-    <div class="faq-item"><h2>Koji sertifikat služi za potpisivanje?</h2><p>Za dokumente se koristi Sign sertifikat. Auth sertifikat služi za prijavu. Za potpisivanje je potreban Sign sertifikat i odgovarajući privatni ključ na kartici.</p></div>
-    <div class="faq-item"><h2>Gde unosim PIN?</h2><p>U macOS sistemskom dijalogu kada kartica traži potpis. Aplikacija ne traži da PIN upišeš na sajtu.</p></div>
-    <div class="faq-item"><h2>Da li radi u svim pregledačima?</h2><p>Prijava sa testiranom karticom potvrđena je u Chrome-u, Safariju i Firefox-u na razvojnom Macu. Ponašanje može da zavisi od verzije pregledača, kartice i podešavanja poverenja.</p></div>
-    <div class="faq-item"><h2>Da li PDF potpis ima vremenski žig?</h2><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
-    <div class="faq-item"><h2>Zašto macOS može blokirati prvo otvaranje?</h2><p>Prva izdanja neće biti potpisana Apple Developer ID sertifikatom ni notarizovana. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj korake u uputstvu; ne isključuj Gatekeeper za ceo računar.</p></div>
-    <div class="faq-item"><h2>Kako da proverim preuzeti paket?</h2><p>Na strani <a href={`${import.meta.env.BASE_URL}verzije/`}>Verzije</a> uz izdanje su navedeni SHA-256 otisak i komanda za proveru preuzetog paketa. Pokreni komandu u Terminalu i uporedi rezultate.</p></div>
-  </div></section>
+  <section class="section">
+    <div class="wrap faq-list">
+      <div class="faq-content">
+        <section class="faq-group" aria-labelledby="faq-osnovno">
+          <h2 id="faq-osnovno">Osnovno</h2>
+          <details class="faq-item" open>
+            <summary><h3>Koje dokumente ČIP podržava?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Prvo javno izdanje fokusirano je na ličnu kartu Srbije. Podrška za saobraćajnu dozvolu i zdravstvenu karticu je u planu; biće navedena u opisu verzije kada bude spremna.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Da li je aplikacija besplatna?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Da. Javno izdanje je besplatno za preuzimanje i korišćenje.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Na kojim Mac računarima radi prvo izdanje?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Verzija 0.1 radi na Apple Silicon Macu sa macOS 14 ili novijim. Intel Mac je u planu za narednu verziju.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Da li je ovo zvanična MUP aplikacija?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Ne. ČIP je nezavisna macOS aplikacija; prvo javno izdanje radi sa ličnom kartom Srbije. Sertifikate na kartici izdaje nadležni izdavalac; aplikacija ih ne izdaje.</p></div>
+          </details>
+        </section>
+
+        <section class="faq-group" aria-labelledby="faq-sertifikati">
+          <h2 id="faq-sertifikati">Sertifikati i prijava</h2>
+          <details class="faq-item">
+            <summary><h3>Da li moram ručno da podesim poverenje u MUP sertifikate?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Aplikacija proverava MUP CA 4 lanac. Ako nedostaje, može da ga doda nakon tvoje izričite potvrde; macOS zatim traži sistemsku autentikaciju. Promena poverenja važi i za druge aplikacije tog korisnika.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Koji sertifikat služi za potpisivanje?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Za dokumente se koristi Sign sertifikat. Auth sertifikat služi za prijavu. Za potpisivanje je potreban Sign sertifikat i odgovarajući privatni ključ na kartici.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Gde unosim PIN?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>U macOS sistemskom dijalogu kada prijava ili potpisivanje to zatraži. PIN ne upisuješ na ovom sajtu.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Da li radi u svim pregledačima?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Prijava sa testiranom karticom potvrđena je u Chrome-u, Safariju i Firefox-u na razvojnom Macu. Ponašanje može da zavisi od verzije pregledača, kartice i podešavanja poverenja.</p></div>
+          </details>
+        </section>
+
+        <section class="faq-group" aria-labelledby="faq-pdf">
+          <h2 id="faq-pdf">PDF i instalacija</h2>
+          <details class="faq-item">
+            <summary><h3>Da li PDF potpis ima vremenski žig?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Zašto macOS može blokirati prvo otvaranje?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Prva izdanja neće biti potpisana Apple Developer ID sertifikatom ni notarizovana. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj <a href={`${base}uputstvo/#instalacija`}>korake za instalaciju</a>; ne isključuj Gatekeeper za ceo računar.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Kako da proverim preuzeti paket?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Na strani <a href={`${base}verzije/`}>Verzije</a> uz izdanje su navedeni SHA-256 otisak i komanda za proveru preuzetog paketa. Pokreni komandu u Terminalu i uporedi rezultate.</p></div>
+          </details>
+        </section>
+      </div>
+    </div>
+  </section>
 </SiteLayout>

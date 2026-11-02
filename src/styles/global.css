@@ -5,6 +5,7 @@
   --color-page: #f7faff;
   --color-link: #245dc5;
   --color-footer-text: #536780;
+  --color-focus: #946500;
   color: var(--color-ink);
   background: var(--color-page);
   font-synthesis: none;
@@ -21,7 +22,7 @@ button { font: inherit; }
 img { max-width: 100%; height: auto; }
 ::selection { background: #c7defb; }
 
-:focus-visible { outline: 3px solid #e2ac30; outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 100; padding: 10px 14px; color: white; background: #163c80; border-radius: 8px; }
 .skip-link:focus { top: 12px; }
 .wrap { width: min(100% - 48px, 1140px); margin-inline: auto; }
@@ -99,6 +100,7 @@ a.download-primary:hover { background: #174eaf; }
 .cta-band h2 { margin: 0 0 7px; color: #fff; font-size: 1.9rem; letter-spacing: -.04em; }
 .cta-band p { margin: 0; color: #d4e3ff; line-height: 1.55; }
 .cta-band p a { color: #fff; text-underline-offset: 3px; }
+.cta-band :focus-visible { outline-color: #fff; }
 .cta-band .download-split { flex-shrink: 0; background: #fff; color: #19417c; box-shadow: none; }
 .cta-band .download-primary.unavailable { background: #e8eef9; color: #325789; }
 .cta-band .download-options { border-left-color: #d6e0f2; }
@@ -108,6 +110,8 @@ a.download-primary:hover { background: #174eaf; }
 .page-heading h1 { margin: 0 0 13px; font-size: clamp(2.65rem,4.5vw,4.2rem); }
 .page-heading p { margin: 0; max-width: 660px; color: #5b6e86; font-size: 1.1rem; line-height: 1.6; }
 .content-layout { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 75px; padding-top: 56px; padding-bottom: 94px; }
+.content-layout .article { grid-column: 1; grid-row: 1; }
+.content-layout .on-page { grid-column: 2; grid-row: 1; }
 .article { min-width: 0; max-width: 745px; color: #2d455f; font-size: 1.03rem; line-height: 1.72; }
 .article h2 { margin: 44px 0 13px; color: #17375f; font-size: 1.85rem; line-height: 1.2; letter-spacing: -.035em; scroll-margin-top: 25px; }
 .article h2:first-child { margin-top: 0; }
@@ -124,11 +128,19 @@ a.download-primary:hover { background: #174eaf; }
 .on-page strong { display: block; margin-bottom: 12px; color: #28496e; font-size: .87rem; }
 .on-page a { display: block; margin: 8px 0; color: #5d7088; text-decoration: none; font-size: .9rem; }
 .on-page a:hover { color: #245dc5; text-decoration: underline; }
-.faq-list { max-width: 780px; margin: 0; }
-.faq-item { border-bottom: 1px solid #dde7f3; padding: 23px 0; }
-.faq-item:first-child { padding-top: 0; }
-.faq-item h2 { margin: 0 0 9px; font-size: 1.18rem; color: #1a3c65; }
-.faq-item p { margin: 0; color: #5d7088; line-height: 1.65; }
+.faq-content { max-width: 780px; }
+.faq-group + .faq-group { margin-top: 42px; }
+.faq-group > h2 { margin: 0 0 8px; color: #17375f; font-size: 1.4rem; letter-spacing: -.025em; }
+.faq-item { border-bottom: 1px solid #dde7f3; }
+.faq-item summary { display: flex; align-items: center; gap: 18px; min-height: 64px; padding: 14px 0; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 { flex: 1; margin: 0; color: #1a3c65; font-size: 1.08rem; line-height: 1.4; }
+.faq-disclosure-icon { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #eaf2ff; color: #245dc5; font-size: 1.28rem; line-height: 1; }
+.faq-disclosure-icon::before { content: "+"; }
+.faq-item[open] .faq-disclosure-icon::before { content: "−"; }
+.faq-answer { padding: 0 48px 21px 0; }
+.faq-answer p { margin: 0; color: #5d7088; line-height: 1.65; }
+.faq-answer a { color: var(--color-link); text-underline-offset: 3px; }
 .empty-state { padding: 35px; border: 1px dashed #b8c9e1; border-radius: 14px; background: #fff; }
 .empty-state h2 { margin: 0 0 9px; font-size: 1.35rem; color: #1c3d67; }
 .empty-state p { margin: 0; color: #62758c; line-height: 1.6; }
@@ -188,17 +200,25 @@ a.download-primary:hover { background: #174eaf; }
   .steps { grid-template-columns: 1fr; gap: 35px; }
   .cta-band { margin-bottom: 60px; padding: 27px; flex-direction: column; align-items: start; }
   .page-heading { padding: 43px 0 33px; }
-  .content-layout { display: block; padding-top: 37px; padding-bottom: 65px; }
-  .on-page { position: static; margin-top: 38px; }
+  .content-layout { display: flex; flex-direction: column; gap: 0; padding-top: 37px; padding-bottom: 65px; }
+  .on-page { position: static; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; margin-bottom: 32px; }
+  .on-page strong { grid-column: 1 / -1; }
+  .on-page a { display: flex; align-items: center; min-height: 44px; margin: 0; line-height: 1.35; }
+  .faq-group + .faq-group { margin-top: 34px; }
   .footer-inner { flex-direction: column; }
 }
 @media (max-width: 480px) {
+  .cta-band { padding: 24px 18px; }
+  .cta-band .download-split { width: 100%; }
+  .cta-band .download-primary { flex: 1; min-width: 0; justify-content: center; padding: 0 8px; font-size: .88rem; }
+  .cta-band .download-options summary { min-width: 44px; }
+  .faq-answer { padding-right: 0; }
   .feature-grid { grid-template-columns: 1fr; }
   .feature { display: grid; grid-template-columns: 42px 1fr; column-gap: 15px; }
   .feature-icon { grid-row: span 2; }
   .feature h3 { margin: 1px 0 6px; }
   .feature p { grid-column: 2; }
-  .footer-inner nav { flex-wrap: wrap; gap: 4px 20px; }
+  .footer-inner nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; }
   .footer-inner nav a { min-height: 44px; display: inline-flex; align-items: center; }
 }
 @media (prefers-reduced-motion: reduce) {
