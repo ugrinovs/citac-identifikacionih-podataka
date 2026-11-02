@@ -17,7 +17,7 @@ Tekst strana je u `src/pages/`, izgled u `src/styles/global.css`. Podaci o izdan
 
 Sajt je podešen za `https://ugrinovs.github.io/citac-identifikacionih-podataka/`. Workflow `.github/workflows/site.yml` gradi Astro projekat i objavljuje `dist/` preko zvaničnih GitHub Pages Actions. Ostali projekti na `ugrinovs.github.io/<pathname>/` ostaju na svojim putanjama.
 
-U javnom repozitorijumu treba podesiti **Settings → Pages → Build and deployment → GitHub Actions**. Workflow se pokreće posle izmene sajta ili objave javnog Release-a. Dodatni token nije potreban. Poddomen `cip.ugrinovs.com` može se povezati kasnije: najpre DNS CNAME `cip` → `ugrinovs.github.io`, potom custom domain u Pages podešavanjima, pa promena Astro `site` i `base` na poddomen i `/`.
+U javnom repozitorijumu treba podesiti **Settings → Pages → Build and deployment → GitHub Actions**. Workflow se pokreće posle izmene sajta; objava javnog Release-a pokreće novo izvršavanje sa grane `main`, jer Pages okruženje ne prihvata deploy sa taga. Dodatni token nije potreban. Poddomen `cip.ugrinovs.com` može se povezati kasnije: najpre DNS CNAME `cip` → `ugrinovs.github.io`, potom custom domain u Pages podešavanjima, pa promena Astro `site` i `base` na poddomen i `/`.
 
 Lokalni Astro preview koristi putanju `http://localhost:4321/citac-identifikacionih-podataka/`.
 
