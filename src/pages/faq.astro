@@ -15,6 +15,6 @@ import SiteLayout from '../layouts/SiteLayout.astro';
     <div class="faq-item"><h2>Da li radi u svim pregledačima?</h2><p>Prijava sa testiranom karticom potvrđena je u Chrome-u, Safariju i Firefox-u na razvojnom Macu. Ponašanje može da zavisi od verzije pregledača, kartice i podešavanja poverenja.</p></div>
     <div class="faq-item"><h2>Da li PDF potpis ima vremenski žig?</h2><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
     <div class="faq-item"><h2>Zašto macOS može blokirati prvo otvaranje?</h2><p>Prva izdanja neće biti potpisana Apple Developer ID sertifikatom ni notarizovana. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj korake u uputstvu; ne isključuj Gatekeeper za ceo računar.</p></div>
-    <div class="faq-item"><h2>Kako da proverim preuzeti paket?</h2><p>Uz DMG je objavljen SHA-256 otisak. U Terminalu pokreni <code>shasum -a 256 CIP-0.1.dmg</code> i uporedi rezultat sa otiskom na strani izdanja.</p></div>
+    <div class="faq-item"><h2>Kako da proverim preuzeti paket?</h2><p>Na strani <a href={`${import.meta.env.BASE_URL}verzije/`}>Verzije</a> uz izdanje su navedeni SHA-256 otisak i komanda za proveru preuzetog paketa. Pokreni komandu u Terminalu i uporedi rezultate.</p></div>
   </div></section>
 </SiteLayout>

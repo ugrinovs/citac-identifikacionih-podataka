@@ -6,6 +6,7 @@ import releaseData from '../data/releases.json';
 
 const base = import.meta.env.BASE_URL;
 const currentVersion = releaseData.latest?.version;
+const unsignedRelease = releaseData.latest?.unsigned ?? false;
 ---
 
 <SiteLayout
@@ -16,8 +17,9 @@ const currentVersion = releaseData.latest?.version;
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1>ČIP. Dokumenta sa čipom na Macu.</h1>
-        <p class="lead">ČIP je čitač identifikacionih podataka. Počinjemo sa ličnom kartom: pročitaj podatke, pripremi prijavu u pregledaču i potpiši ili proveri PDF. Saobraćajna dozvola i zdravstvena kartica su u planu.</p>
+        <h1>Lična karta Srbije na Macu.</h1>
+        <p class="lead">Pročitaj podatke sa lične karte, proveri sertifikate, prijavi se u pregledaču i potpiši ili proveri PDF.</p>
+        <p class="hero-assurance">Nezavisna aplikacija. {unsignedRelease && 'Ovo izdanje nije potpisano Apple Developer ID sertifikatom ni notarizovano. '}<a href={`${base}verzije/`}>Proveri paket i instalaciju pre otvaranja</a>.</p>
         <DownloadSplit />
         <p class="hero-meta">Besplatno · Apple Silicon · macOS 14 ili noviji {currentVersion && `· verzija ${currentVersion}`}</p>
       </div>
@@ -33,7 +35,7 @@ const currentVersion = releaseData.latest?.version;
   <section class="section">
     <div class="wrap">
       <h2>Šta možeš da uradiš</h2>
-      <p class="section-intro">Prva verzija fokusirana je na ličnu kartu. Podrška za saobraćajnu dozvolu i zdravstvenu karticu je planirana.</p>
+      <p class="section-intro">Sve funkcije prvog izdanja namenjene su ličnoj karti Srbije. Podrška za druge dokumente planirana je za kasnije.</p>
       <div class="feature-grid">
         <div class="feature"><span class="feature-icon" aria-hidden="true">▣</span><h3>Pročitaj podatke</h3><p>Pregledaj podatke, adresu i fotografiju sa lične karte kroz jasan prikaz.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">✦</span><h3>Pregledaj sertifikate</h3><p>Razlikuj sertifikat za prijavu od sertifikata za potpisivanje.</p></div>
@@ -60,7 +62,7 @@ const currentVersion = releaseData.latest?.version;
 
   <div class="wrap">
     <section class="cta-band">
-      <div><h2>Spremno za tvoj Mac</h2><p>Preuzmi prvo javno izdanje i prati uputstvo za instalaciju.</p></div>
+      <div><h2>Spremno za tvoj Mac</h2><p>Preuzmi prvo javno izdanje. <a href={`${base}verzije/`}>Pogledaj otisak i uputstvo za instalaciju</a> pre otvaranja paketa.</p></div>
       <DownloadSplit />
     </section>
   </div>

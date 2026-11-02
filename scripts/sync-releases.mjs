@@ -23,11 +23,19 @@ const releases = raw
   .map((release) => {
     const installer = release.assets?.find((asset) => /^(?:LicnaKarta|CIP)(?:-[\w.-]+)?\.dmg$/i.test(asset.name));
     if (!installer || !release.published_at || !release.tag_name) return null;
+    const checksumAsset = release.assets?.find((asset) => asset.name === `${installer.name}.sha256`);
+    const checksumLine = (release.body || '').split(/\r?\n/).find((line) => line.includes('SHA-256') && line.includes(installer.name));
+    const sha256 = /^sha256:([a-f0-9]{64})$/i.exec(installer.digest || '')?.[1]
+      || checksumLine?.match(/\b[a-f0-9]{64}\b/i)?.[0]
+      || null;
     return {
       version: release.tag_name.replace(/^v/, ''),
       publishedAt: new Intl.DateTimeFormat('sr-RS', { dateStyle: 'medium' }).format(new Date(release.published_at)),
       downloadUrl: installer.browser_download_url,
       size: `${(installer.size / 1024 / 1024).toFixed(1)} MiB`,
+      sha256,
+      checksumUrl: checksumAsset?.browser_download_url || null,
+      unsigned: /nema Apple Developer ID potpis/i.test(release.body || ''),
       notes: (release.body || 'Nema beleški za ovo izdanje.').trim(),
     };
   })
