@@ -15,11 +15,11 @@ Tekst strana je u `src/pages/`, izgled u `src/styles/global.css`. Podaci o izdan
 
 ## GitHub Pages
 
-Sajt je podešen za `https://ugrinovs.github.io/citac-identifikacionih-podataka/`. Workflow `.github/workflows/site.yml` gradi Astro projekat i objavljuje `dist/` preko zvaničnih GitHub Pages Actions. Ostali projekti na `ugrinovs.github.io/<pathname>/` ostaju na svojim putanjama.
+Sajt je podešen za `https://cip.ugrinovs.com/`. Poddomen `cip` ima DNS CNAME ka `ugrinovs.github.io`, a u podešavanjima GitHub Pages izabran je isti custom domain i uključen **Enforce HTTPS**. Stara adresa `https://ugrinovs.github.io/citac-identifikacionih-podataka/` preusmerava na novi domen. Workflow `.github/workflows/site.yml` gradi Astro projekat i objavljuje `dist/` preko zvaničnih GitHub Pages Actions. Ostali projekti na `ugrinovs.github.io/<pathname>/` ostaju na svojim putanjama.
 
-U javnom repozitorijumu treba podesiti **Settings → Pages → Build and deployment → GitHub Actions**. Workflow se pokreće posle izmene sajta; objava javnog Release-a pokreće novo izvršavanje sa grane `main`, jer Pages okruženje ne prihvata deploy sa taga. Dodatni token nije potreban. Poddomen `cip.ugrinovs.com` može se povezati kasnije: najpre DNS CNAME `cip` → `ugrinovs.github.io`, potom custom domain u Pages podešavanjima, pa promena Astro `site` i `base` na poddomen i `/`.
+U javnom repozitorijumu je podešeno **Settings → Pages → Build and deployment → GitHub Actions**. Workflow se pokreće posle izmene sajta; objava javnog Release-a pokreće novo izvršavanje sa grane `main`, jer Pages okruženje ne prihvata deploy sa taga. Dodatni token nije potreban.
 
-Lokalni Astro preview koristi putanju `http://localhost:4321/citac-identifikacionih-podataka/`.
+Lokalni Astro preview koristi `http://localhost:4321/`.
 
 ## Izdanja i download
 
