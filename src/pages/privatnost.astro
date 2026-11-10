@@ -2,18 +2,19 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 
-<SiteLayout title="Privatnost" description="Kako ČIP obrađuje podatke sa lične karte i PDF dokumente.">
+<SiteLayout title="Privatnost" description="Kako ČIP obrađuje podatke sa podržanih kartica i PDF dokumente.">
   <header class="page-heading"><div class="wrap"><h1>Privatnost</h1><p>Šta aplikacija čita, gde podaci ostaju i kada se koristi mreža.</p></div></header>
   <section class="section"><div class="wrap article" style="max-width: 780px">
     <h2>Podaci sa kartice</h2>
-    <p>ČIP čita podatke i javne sertifikate sa lične karte priključene na tvoj Mac. Aplikacija ih prikazuje lokalno. Privatni ključ ostaje na kartici. PIN se unosi u sistemski macOS dijalog; aplikacija ga ne čuva.</p>
+    <p>ČIP čita podatke sa lične, zdravstvene i saobraćajne kartice priključene na tvoj Mac. Sa lične karte čita i javne sertifikate. Podatke prikazuje lokalno. Privatni ključ ostaje na ličnoj karti. PIN se unosi u sistemski macOS dijalog; aplikacija ga ne čuva.</p>
     <h2>PDF dokumenti</h2>
-    <p>PDF koji izabereš aplikacija čita i potpisuje lokalno, a rezultat čuva na mestu koje odabereš. PDF i podaci sa lične karte ne šalju se na naš server.</p>
+    <p>PDF koji izabereš aplikacija čita i potpisuje lokalno, a rezultat čuva na mestu koje odabereš. PDF i podaci sa kartica ne šalju se na naš server.</p>
     <h2>Mreža i poverenje</h2>
     <p>Pri proveri opoziva sertifikata aplikacija preuzima javne liste opozvanih sertifikata sa MUP servera. Taj server može videti IP adresu i podatke o mrežnom zahtevu; aplikacija mu ne šalje PIN, PDF niti serijski broj sertifikata. Za prijavu na eID otvara se sajt u tvom pregledaču, pa za tu posetu važe i pravila privatnosti portala.</p>
+    <p>Kada na zdravstvenoj kartici izabereš „Proveri u RFZO”, aplikacija šalje broj kartice i LBO zvaničnom sajtu RFZO da dobije aktuelni datum overe. Provera koristi privremenu WebKit sesiju i ne šalje PIN. RFZO može videti IP adresu i podatke o tom zahtevu. Bez tvog klika na dugme, aplikacija ne pokreće tu onlajn proveru.</p>
     <p>Dodavanje MUP CA sertifikata u korisnički Keychain menja podešavanje poverenja na tom Macu tek posle tvoje potvrde. Promena važi i za druge aplikacije koje koriste sistemsko poverenje.</p>
     <h2>Vremenski žig</h2>
-    <p>Prvo javno izdanje ne koristi servis vremenskog žiga. Ako kasnije dodamo tu opciju, pre objave ćemo navesti pružaoca usluge i tačno opisati podatke koji se njemu šalju.</p>
+    <p>ČIP 0.2.0 ne koristi servis vremenskog žiga. Ako kasnije dodamo tu opciju, pre objave ćemo navesti pružaoca usluge i tačno opisati podatke koji se njemu šalju.</p>
     <h2>Sajt</h2>
     <p>Ovaj statički sajt nema nalog, obrazac za unos podataka sa kartice ni našu analitiku. Hosting platforma može obrađivati uobičajene tehničke podatke o poseti, kao što je IP adresa.</p>
   </div></section>

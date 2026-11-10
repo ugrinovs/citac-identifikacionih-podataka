@@ -11,14 +11,14 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
 
 <SiteLayout
   title="Početna"
-  description="ČIP je besplatna macOS aplikacija za čitanje lične karte Srbije. Podrška za zdravstvenu karticu i saobraćajnu dozvolu razvija se za naredno izdanje."
+  description="ČIP je besplatna macOS aplikacija za čitanje lične karte, zdravstvene kartice i saobraćajne dozvole Srbije."
   current="home"
 >
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <h1>Lična karta Srbije na Macu.</h1>
-        <p class="lead">Pročitaj podatke sa lične karte, proveri sertifikate, prijavi se u pregledaču i potpiši ili proveri PDF.</p>
+        <h1>Tri kartice. Jedan Mac.</h1>
+        <p class="lead">Pročitaj ličnu kartu, zdravstvenu karticu ili saobraćajnu dozvolu. Uz ličnu kartu proveri sertifikate, prijavi se u pregledaču i potpiši PDF.</p>
         <p class="hero-assurance">Nezavisna aplikacija. {unsignedRelease && 'Ovo izdanje nije potpisano Apple Developer ID sertifikatom ni notarizovano. '}<a href={`${base}verzije/`}>Proveri paket i instalaciju pre otvaranja</a>.</p>
         <DownloadSplit />
         <p class="hero-meta">Besplatno · Apple Silicon · macOS 14 ili noviji {currentVersion && `· verzija ${currentVersion}`}</p>
@@ -35,9 +35,9 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
   <section class="section">
     <div class="wrap">
       <h2>Šta možeš da uradiš</h2>
-      <p class="section-intro">Verzija 0.1.0 namenjena je ličnoj karti Srbije. Podrška za druge kartice razvija se za naredno izdanje.</p>
+      <p class="section-intro">ČIP prepoznaje vrstu ubačene kartice i prikazuje funkcije koje su za nju dostupne.</p>
       <div class="feature-grid">
-        <div class="feature"><span class="feature-icon" aria-hidden="true">▣</span><h3>Pročitaj podatke</h3><p>Pregledaj podatke, adresu i fotografiju sa lične karte kroz jasan prikaz.</p></div>
+        <div class="feature"><span class="feature-icon" aria-hidden="true">▣</span><h3>Pročitaj podatke</h3><p>Pregledaj ličnu kartu, zdravstvenu karticu ili saobraćajnu dozvolu u prikazu prilagođenom dokumentu.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">✦</span><h3>Pregledaj sertifikate</h3><p>Razlikuj sertifikat za prijavu od sertifikata za potpisivanje.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">⌁</span><h3>Prijavi se u pregledaču</h3><p>Proveri da li macOS vidi karticu, token i MUP lanac poverenja.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">✓</span><h3>Radi sa PDF-om</h3><p>Potpiši PDF ključem koji ostaje na kartici i proveri postojeći potpis.</p></div>
@@ -47,10 +47,10 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
 
   <section class="section development-section" aria-labelledby="in-development">
     <div class="wrap">
-      <p class="development-eyebrow">Sledeće izdanje · u razvoju</p>
-      <h2 id="in-development">Jedna aplikacija za više kartica</h2>
-      <p class="section-intro">Razvojna verzija prepoznaje zdravstvenu karticu i saobraćajnu dozvolu i prikazuje njihove podatke u prilagođenom prikazu. Kod zdravstvene kartice omogućava i proveru datuma overe na sajtu RFZO-a nakon korisničkog zahteva.</p>
-      <p class="development-note">Ove mogućnosti nisu deo paketa 0.1.0 koji je trenutno ponuđen za preuzimanje. Potpisivanje PDF-a zahteva ličnu kartu; provera već potpisanog PDF-a biće zaseban alat koji radi i bez kartice.</p>
+      <p class="development-eyebrow">Podržane kartice</p>
+      <h2 id="in-development">Prikaz prilagođen dokumentu</h2>
+      <p class="section-intro">Za zdravstvenu karticu ČIP prikazuje podatke sa čipa i, na tvoj zahtev, proverava aktuelni datum overe preko RFZO-a. Za saobraćajnu dozvolu prikazuje podatke o dokumentu i vozilu.</p>
+      <p class="development-note">Prijava u pregledaču i potpisivanje PDF-a zahtevaju ličnu kartu sa odgovarajućim sertifikatom. Provera već potpisanog PDF-a dostupna je i bez kartice.</p>
     </div>
   </section>
 
@@ -59,11 +59,11 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
   <section class="section steps-section">
     <div class="wrap">
       <h2>Početak rada</h2>
-      <p class="section-intro">Za početak su dovoljni Mac, kompatibilan čitač i lična karta sa čipom.</p>
+      <p class="section-intro">Za čitanje su dovoljni Mac, kompatibilan čitač i jedna od podržanih kartica.</p>
       <div class="steps">
         <div class="step"><h3>Preuzmi aplikaciju</h3><p>Otvori paket sa strane Verzije, premesti aplikaciju u Applications i prati uputstvo za prvo pokretanje.</p></div>
-        <div class="step"><h3>Ubaci ličnu kartu</h3><p>Poveži kompatibilan čitač i izaberi ga u aplikaciji. PIN unosiš samo u macOS dijalogu kada je potreban.</p></div>
-        <div class="step"><h3>Izaberi radnju</h3><p>Čitaj podatke, pripremi prijavu u pregledaču ili izaberi PDF za potpis i proveru.</p></div>
+        <div class="step"><h3>Ubaci karticu</h3><p>Poveži kompatibilan čitač. ČIP prepoznaje vrstu kartice i prikazuje odgovarajuće podatke.</p></div>
+        <div class="step"><h3>Izaberi radnju</h3><p>Čitaj podatke ili proveri PDF. Uz ličnu kartu možeš pripremiti prijavu u pregledaču i potpisati PDF.</p></div>
       </div>
       <p style="margin:32px 0 0"><a class="text-link" href={`${base}uputstvo/`}>Pročitaj celo uputstvo</a></p>
     </div>
@@ -71,7 +71,7 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
 
   <div class="wrap">
     <section class="cta-band">
-      <div><h2>Spremno za tvoj Mac</h2><p>Preuzmi prvo javno izdanje. <a href={`${base}verzije/`}>Pogledaj otisak i uputstvo za instalaciju</a> pre otvaranja paketa.</p></div>
+      <div><h2>Spremno za tvoj Mac</h2><p>Preuzmi aktuelno izdanje. <a href={`${base}verzije/`}>Pogledaj otisak i uputstvo za instalaciju</a> pre otvaranja paketa.</p></div>
       <DownloadSplit />
     </section>
   </div>

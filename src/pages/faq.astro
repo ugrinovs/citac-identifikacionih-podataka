@@ -12,19 +12,27 @@ const base = import.meta.env.BASE_URL;
           <h2 id="faq-osnovno">Osnovno</h2>
           <details class="faq-item" open>
             <summary><h3>Koje dokumente ČIP podržava?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Paket 0.1.0 koji je trenutno dostupan za preuzimanje namenjen je ličnoj karti Srbije. U razvojnoj verziji ČIP prepoznaje i čita zdravstvenu karticu i saobraćajnu dozvolu na testiranim karticama. Te funkcije će biti u opisu narednog javnog izdanja kada bude objavljeno.</p></div>
+            <div class="faq-answer"><p>ČIP 0.2.0 prepoznaje ličnu kartu Srbije, zdravstvenu karticu RFZO i saobraćajnu dozvolu. Čitanje je provereno na po jednoj testiranoj verziji svakog tipa kartice; druge varijante mogu da se razlikuju.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Kako se proverava datum overe zdravstvene kartice?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>ČIP prvo prikazuje datum zapisan na čipu. Kada izabereš „Proveri u RFZO”, šalje broj kartice i LBO zvaničnom sajtu RFZO i prikazuje aktuelni odgovor odvojeno od podatka sa čipa. PIN se za ovu proveru ne šalje. Ako RFZO promeni obrazac, onlajn provera može prestati da radi dok aplikacija ne bude ažurirana.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Da li ČIP proverava digitalne potpise blokova na zdravstvenoj i saobraćajnoj kartici?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Ne u verziji 0.2.0. Aplikacija čita i prikazuje te podatke, ali ne proverava kriptografsku autentičnost blokova na tim karticama.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Da li je aplikacija besplatna?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
             <div class="faq-answer"><p>Da. Javno izdanje je besplatno za preuzimanje i korišćenje.</p></div>
           </details>
           <details class="faq-item">
-            <summary><h3>Na kojim Mac računarima radi prvo izdanje?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Verzija 0.1 radi na Apple Silicon Macu sa macOS 14 ili novijim. Intel Mac je u planu za narednu verziju.</p></div>
+            <summary><h3>Na kojim Mac računarima radi ČIP 0.2.0?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Verzija 0.2.0 radi na Apple Silicon Macu sa macOS 14 ili novijim. Intel Mac još nije podržan.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Da li je ovo zvanična MUP aplikacija?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Ne. ČIP je nezavisna macOS aplikacija; prvo javno izdanje radi sa ličnom kartom Srbije. Sertifikate na kartici izdaje nadležni izdavalac; aplikacija ih ne izdaje.</p></div>
+            <div class="faq-answer"><p>Ne. ČIP je nezavisna macOS aplikacija. Sertifikate na ličnoj karti izdaje nadležni izdavalac; aplikacija ih ne izdaje.</p></div>
           </details>
         </section>
 
@@ -52,15 +60,15 @@ const base = import.meta.env.BASE_URL;
           <h2 id="faq-pdf">PDF i instalacija</h2>
           <details class="faq-item">
             <summary><h3>Zašto je provera PDF-a vidljiva i bez lične karte?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Potpisivanje novog PDF-a koristi Sign ključ sa lične karte. Provera već potpisanog PDF-a ne traži karticu, pa je u razvojnoj verziji izdvojena kao samostalan alat kada je ubačena zdravstvena ili saobraćajna kartica, ili kada kartice nema.</p></div>
+            <div class="faq-answer"><p>Potpisivanje novog PDF-a koristi Sign ključ sa lične karte. Provera već potpisanog PDF-a ne traži karticu, pa je izdvojena kao samostalan alat kada je ubačena zdravstvena ili saobraćajna kartica, ili kada kartice nema.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Da li PDF potpis ima vremenski žig?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
+            <div class="faq-answer"><p>Ne. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Zašto macOS može blokirati prvo otvaranje?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Prva izdanja neće biti potpisana Apple Developer ID sertifikatom ni notarizovana. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj <a href={`${base}uputstvo/#instalacija`}>korake za instalaciju</a>; ne isključuj Gatekeeper za ceo računar.</p></div>
+            <div class="faq-answer"><p>ČIP 0.2.0 nema Apple Developer ID potpis ni notarizaciju. macOS zato može prikazati bezbednosno upozorenje. Ako si aplikaciju preuzeo sa naše strane Verzije i želiš da je otvoriš, pogledaj <a href={`${base}uputstvo/#instalacija`}>korake za instalaciju</a>; ne isključuj Gatekeeper za ceo računar.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Kako da proverim preuzeti paket?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>

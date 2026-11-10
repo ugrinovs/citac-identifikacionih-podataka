@@ -12,8 +12,8 @@ const base = import.meta.env.BASE_URL;
     </nav>
     <article class="article">
       <h2 id="pre">Pre nego što počneš</h2>
-      <p>Za prvo javno izdanje potreban je Mac sa Apple Silicon procesorom i macOS 14 ili novijim, kompatibilan čitač pametnih kartica i lična karta Srbije. Za potpisivanje PDF-a na kartici mora postojati važeći <strong>sertifikat za potpis</strong>; sertifikat za prijavu služi drugoj nameni.</p>
-      <div class="notice"><p><strong>Podrška za kartice:</strong> paket 0.1.0 namenjen je ličnoj karti. Čitanje zdravstvene kartice i saobraćajne dozvole provereno je u razvojnoj verziji i nije deo trenutno dostupnog paketa. Podrška za Intel Mac planirana je za neku od narednih verzija.</p></div>
+      <p>Za ČIP 0.2.0 potreban je Mac sa Apple Silicon procesorom i macOS 14 ili novijim, kompatibilan čitač pametnih kartica i jedna od podržanih kartica: lična, zdravstvena ili saobraćajna. Za prijavu i potpisivanje PDF-a potrebna je lična karta sa odgovarajućim sertifikatom.</p>
+      <div class="notice"><p><strong>Podrška za kartice:</strong> čitanje je provereno na po jednoj verziji sva tri tipa kartica. Druge varijante mogu da se razlikuju. Intel Mac još nije podržan.</p></div>
 
       <h2 id="instalacija">Instalacija</h2>
       <ol>
@@ -22,16 +22,16 @@ const base = import.meta.env.BASE_URL;
         <li>Pokušaj da pokreneš aplikaciju. Ako je macOS blokira, otvori <strong>System Settings → Privacy &amp; Security</strong>, pronađi upozorenje za aplikaciju i izaberi <strong>Open Anyway</strong>, pa potvrdi otvaranje.</li>
         <li>Posle prve instalacije ili ažuriranja izvadi i vrati karticu da je macOS ponovo prepozna.</li>
       </ol>
-      <p>Verzija 0.1 nema Apple Developer ID potpis ni notarizaciju, pa macOS ne može da potvrdi identitet izdavača. Bezbednosni izuzetak napravi samo ako si paket preuzeo sa naše strane Verzije, proverio njegov SHA-256 otisak i odlučio da veruješ ovom izdanju.</p>
+      <p>Verzija 0.2.0 nema Apple Developer ID potpis ni notarizaciju, pa macOS ne može da potvrdi identitet izdavača. Bezbednosni izuzetak napravi samo ako si paket preuzeo sa naše strane Verzije, proverio njegov SHA-256 otisak i odlučio da veruješ ovom izdanju.</p>
 
       <h2 id="citanje">Čitanje kartice</h2>
       <ol>
-        <li>Poveži čitač sa Macom i ubaci ličnu kartu.</li>
+        <li>Poveži čitač sa Macom i ubaci podržanu karticu.</li>
         <li>Izaberi čitač u bočnoj traci aplikacije.</li>
-        <li>Otvori prikaz podataka ili sertifikata i pokreni čitanje.</li>
+        <li>ČIP prepoznaje vrstu kartice i prikazuje odgovarajući pregled. Uz ličnu kartu možeš posebno pročitati podatke i sertifikate.</li>
       </ol>
       <p>Privatni ključevi ne napuštaju karticu. Sam pregled javnih sertifikata ne traži potpisivanje.</p>
-      <p>U razvojnoj verziji aplikacija automatski bira prikaz prema ubačenoj kartici: lična karta, zdravstvena kartica ili saobraćajna dozvola. Datum overe zdravstvene kartice može da se proveri zasebnim dugmetom; aplikacija tada šalje broj kartice i LBO zvaničnom RFZO sajtu.</p>
+      <p>Za zdravstvenu karticu datum zapisan na čipu prikazan je odvojeno od onlajn provere. Dugme „Proveri u RFZO” šalje broj kartice i LBO zvaničnom RFZO sajtu i prikazuje aktuelni odgovor; PIN se ne šalje. Saobraćajna dozvola prikazuje podatke o dokumentu i vozilu. Digitalni potpisi blokova na ove dve kartice još se ne proveravaju.</p>
 
       <h2 id="pregledac">Prijava u pregledaču</h2>
       <p>U aplikaciji otvori <strong>Prijava u pregledaču</strong>. Tu vidiš da li macOS prepoznaje token i da li su MUP CA sertifikati instalirani i pouzdani.</p>
@@ -40,8 +40,8 @@ const base = import.meta.env.BASE_URL;
       <h2 id="pdf">Potpisivanje i provera PDF-a</h2>
       <p>Za potpis je potrebna lična karta: izaberi ulazni PDF i mesto za novi, potpisani primerak. Aplikacija koristi <strong>Sign sertifikat</strong> sa lične karte. PIN unosiš u macOS dijalogu, ne na ovom sajtu.</p>
       <p>Posle čuvanja aplikacija proverava integritet i podatke o potpisniku. Postojeći PDF možeš da proveriš zasebnom radnjom, bez novog potpisivanja.</p>
-      <p>U razvojnoj verziji potpisivanje je prikazano među funkcijama lične karte. Kada je ubačena druga kartica ili nema kartice, u bočnoj traci je <strong>Samostalni alat → Provera PDF potpisa</strong>. Za proveru postojeće datoteke kartica nije potrebna.</p>
-      <div class="notice"><p><strong>Vremenski žig:</strong> verzija 0.1 pravi PAdES B-B potpis bez vremenskog žiga. Za potpis sa potvrđenim vremenom potreban je zaseban servis; ta mogućnost nije uključena u ovo izdanje.</p></div>
+      <p>Potpisivanje je prikazano među funkcijama lične karte. Kada je ubačena druga kartica ili nema kartice, u bočnoj traci je <strong>Samostalni alat → Provera PDF potpisa</strong>. Za proveru postojeće datoteke kartica nije potrebna.</p>
+      <div class="notice"><p><strong>Vremenski žig:</strong> verzija 0.2.0 pravi PAdES B-B potpis bez vremenskog žiga. Za potpis sa potvrđenim vremenom potreban je zaseban servis; ta mogućnost nije uključena u ovo izdanje.</p></div>
 
       <h2 id="pomoc">Ako nešto ne radi</h2>
       <p>Prvo proveri da li je kartica pravilno umetnuta, da li se čitač pojavljuje u aplikaciji i da li je prikaz <strong>Prijava u pregledaču</strong> označio MUP lanac kao pouzdan. Za najčešća pitanja pogledaj <a href={`${base}faq/`}>FAQ</a>.</p>

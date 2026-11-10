@@ -11,12 +11,12 @@
   },
   {
     "file": "zdravstvena-kartica.png",
-    "alt": "Ilustrativni prikaz razvojne verzije ČIP-a: zdravstvena kartica i dugme za proveru overe",
-    "caption": "U razvoju: čitanje zdravstvene kartice i provera overe na zahtev korisnika. Nije deo paketa 0.1.0."
+    "alt": "Ilustrativni prikaz ČIP-a: zdravstvena kartica i dugme za proveru overe",
+    "caption": "Zdravstvena kartica: podaci sa čipa i provera overe na zahtev korisnika. Podaci na slici su izmišljeni."
   },
   {
     "file": "saobracajna-dozvola.png",
-    "alt": "Ilustrativni prikaz razvojne verzije ČIP-a: podaci sa saobraćajne dozvole",
-    "caption": "U razvoju: čitanje saobraćajne dozvole. Nije deo paketa 0.1.0."
+    "alt": "Ilustrativni prikaz ČIP-a: podaci sa saobraćajne dozvole",
+    "caption": "Saobraćajna dozvola: podaci o dokumentu i vozilu. Podaci na slici su izmišljeni."
   }
 ]

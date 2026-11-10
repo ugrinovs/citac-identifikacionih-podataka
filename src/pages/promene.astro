@@ -11,7 +11,6 @@ const markdown = new MarkdownIt({ html: false, linkify: false });
 <SiteLayout title="Šta je novo" description="Promene u svakom javnom izdanju ČIP-a za macOS.">
   <header class="page-heading"><div class="wrap"><h1>Šta je novo</h1><p>Pregled promena po verzijama, napisan za ljude koji koriste aplikaciju.</p></div></header>
   <section class="section"><div class="wrap">
-    <div class="upcoming-release"><p class="development-eyebrow">U razvoju · nije u paketu 0.1.0</p><h2>Sledeće izdanje</h2><ul><li>Automatsko prepoznavanje lične, zdravstvene i saobraćajne kartice i prikaz podataka prilagođen tipu kartice.</li><li>Provera datuma overe zdravstvene kartice preko RFZO-a, na zahtev korisnika.</li><li>PDF potpisivanje među funkcijama lične karte; provera postojećeg potpisa kao samostalan alat.</li></ul></div>
     {releases.length ? <div class="release-list">{releases.map((release) => <article class="release-card"><h2>Verzija {release.version}</h2><p>Objavljeno {release.publishedAt}</p><div class="release-notes" set:html={markdown.render(release.notes)} /></article>)}</div> : <div class="empty-state"><h2>Još nema javnih izdanja</h2><p>Kada objavimo prvu verziju, ovde će biti opisane nove funkcije i ispravke.</p></div>}
   </div></section>
 </SiteLayout>
