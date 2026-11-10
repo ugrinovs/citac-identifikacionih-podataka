@@ -34,10 +34,10 @@ Javni changelog se preuzima iz **javnog Release body-ja**. Ne kopirati automatsk
 
 ## Snimci ekrana
 
-Staviti stvarne PNG/WebP snimke **završnog javnog builda** bez ličnih podataka sa dokumenata u `public/screenshots/`, pa dodati zapise u `src/data/screenshots.json`:
+Galerija trenutno koristi ilustrativne PNG prikaze razvojne verzije sa izmišljenim podacima u `public/screenshots/`; opisi u `src/data/screenshots.json` jasno odvajaju funkcije koje nisu u paketu 0.1.0. Kada se objavi naredni paket, zameniti ih stvarnim snimcima tog javnog builda bez ličnih podataka sa dokumenata:
 
 ```json
 [{ "file": "prijava.webp", "alt": "Provera spremnosti za prijavu u pregledaču", "caption": "Prijava u pregledaču" }]
 ```
 
-Galerija se pojavljuje tek kada ima stvarnih snimaka. Trenutni razvojni build nema bezbedne, reprezentativne snimke za objavu.
+Galerija se prikazuje kada lista nije prazna. Ilustrativni prikazi ne dokazuju rad sa konkretnom karticom i ne treba ih predstavljati kao snimke paketa 0.1.0.

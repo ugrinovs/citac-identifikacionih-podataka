@@ -95,6 +95,7 @@ a.download-primary:hover { background: #174eaf; }
 .screenshot-section { background: #edf4ff; border-block: 1px solid #dce7f7; }
 .screenshot-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
 .screenshot-item { margin: 0; padding: 12px; border: 1px solid #d5e2f3; border-radius: 17px; background: #fff; }
+.screenshot-item a { display: block; border-radius: 9px; }
 .screenshot-item img { display: block; width: 100%; border-radius: 9px; }
 .screenshot-item figcaption { padding: 12px 5px 3px; color: #536b89; font-size: .93rem; }
 .steps-section { background: #fff; border-block: 1px solid #e3ebf5; }
@@ -197,6 +198,8 @@ a.download-primary:hover { background: #174eaf; }
   .hero-visual { min-height: 0; max-width: 340px; width: 80%; margin: 23px auto 0; }
 }
 @media (max-width: 700px) {
+  .screenshot-grid { grid-template-columns: 1fr; }
+  .screenshot-item { padding: 8px; }
   html { scroll-padding-top: 82px; }
   .wrap { width: min(100% - 36px, 1140px); }
   .site-header { position: sticky; top: 0; }

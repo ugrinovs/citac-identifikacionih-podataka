@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "file": "licna-karta.png",
+    "alt": "Ilustrativni prikaz ČIP-a: podaci sa lične karte sa izmišljenim primerima",
+    "caption": "Lična karta: lični podaci, prebivalište i dokument. Prikaz sadrži isključivo izmišljene podatke."
+  },
+  {
+    "file": "pdf-potpis.png",
+    "alt": "Ilustrativni prikaz ČIP-a: potpisivanje PDF-a uz ličnu kartu",
+    "caption": "PDF potpis je vezan za ličnu kartu; provera postojećeg potpisa ne zahteva karticu."
+  },
+  {
+    "file": "zdravstvena-kartica.png",
+    "alt": "Ilustrativni prikaz razvojne verzije ČIP-a: zdravstvena kartica i dugme za proveru overe",
+    "caption": "U razvoju: čitanje zdravstvene kartice i provera overe na zahtev korisnika. Nije deo paketa 0.1.0."
+  },
+  {
+    "file": "saobracajna-dozvola.png",
+    "alt": "Ilustrativni prikaz razvojne verzije ČIP-a: podaci sa saobraćajne dozvole",
+    "caption": "U razvoju: čitanje saobraćajne dozvole. Nije deo paketa 0.1.0."
+  }
+]

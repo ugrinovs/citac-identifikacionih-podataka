@@ -8,12 +8,14 @@ const items = screenshots as Screenshot[];
 {items.length > 0 && (
   <section class="section screenshot-section">
     <div class="wrap">
-      <h2>Pogledaj aplikaciju</h2>
-      <p class="section-intro">Stvarni snimci ekrana iz javnog izdanja, bez ličnih podataka sa dokumenata.</p>
+      <h2>Kako izgleda ČIP</h2>
+      <p class="section-intro">Ilustrativni prikazi napravljeni od interfejsa razvojne verzije, sa izmišljenim podacima. Podrška za zdravstvenu i saobraćajnu karticu još nije u paketu 0.1.0. Izaberi sliku za prikaz u punoj veličini.</p>
       <div class="screenshot-grid">
         {items.map((shot) => (
           <figure class="screenshot-item">
-            <img src={`${base}screenshots/${shot.file}`} alt={shot.alt} loading="lazy" />
+            <a href={`${base}screenshots/${shot.file}`} target="_blank" rel="noopener noreferrer">
+              <img src={`${base}screenshots/${shot.file}`} alt={shot.alt} width="1800" height="1140" loading="lazy" />
+            </a>
             <figcaption>{shot.caption}</figcaption>
           </figure>
         ))}
