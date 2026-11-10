@@ -79,6 +79,14 @@ a.download-primary:hover { background: #174eaf; }
 .section h2, .page-heading h1 { color: #17375f; letter-spacing: -.048em; line-height: 1.13; }
 .section h2 { margin: 0 0 15px; font-size: clamp(2.15rem,3.2vw,3rem); }
 .section-intro { color: #5a6c82; font-size: 1.08rem; line-height: 1.65; max-width: 650px; margin: 0 0 34px; }
+.development-section { background: #edf4fc; }
+.development-eyebrow { margin: 0 0 12px; color: #315c91; font-size: .86rem; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }
+.development-note, .release-development-note { max-width: 760px; margin: 0; padding: 16px 19px; border-left: 4px solid #4c78b3; border-radius: 0 10px 10px 0; background: #f3f7fc; color: #304e70; line-height: 1.6; }
+.development-section .development-note { background: #fff; }
+.upcoming-release { max-width: 840px; margin-bottom: 34px; padding: 25px 28px; border: 1px solid #d6e4f4; border-radius: 16px; background: #f3f7fc; }
+.upcoming-release h2 { margin-bottom: 13px; font-size: clamp(1.65rem,2.7vw,2.2rem); }
+.upcoming-release ul { margin: 0; padding-left: 22px; line-height: 1.7; }
+.release-development-note { margin-bottom: 30px; }
 .feature-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; }
 .feature { min-height: 244px; padding: 24px; border: 1px solid #e0e9f5; border-radius: 16px; background: #fff; }
 .feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 11px; color: #245dc5; background: #eaf2ff; font-size: 1.16rem; }

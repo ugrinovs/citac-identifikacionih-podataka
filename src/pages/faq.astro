@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
           <h2 id="faq-osnovno">Osnovno</h2>
           <details class="faq-item" open>
             <summary><h3>Koje dokumente ČIP podržava?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
-            <div class="faq-answer"><p>Prvo javno izdanje fokusirano je na ličnu kartu Srbije. Podrška za saobraćajnu dozvolu i zdravstvenu karticu je u planu; biće navedena u opisu verzije kada bude spremna.</p></div>
+            <div class="faq-answer"><p>Paket 0.1.0 koji je trenutno dostupan za preuzimanje namenjen je ličnoj karti Srbije. U razvojnoj verziji ČIP prepoznaje i čita zdravstvenu karticu i saobraćajnu dozvolu na testiranim karticama. Te funkcije će biti u opisu narednog javnog izdanja kada bude objavljeno.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Da li je aplikacija besplatna?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
@@ -50,6 +50,10 @@ const base = import.meta.env.BASE_URL;
 
         <section class="faq-group" aria-labelledby="faq-pdf">
           <h2 id="faq-pdf">PDF i instalacija</h2>
+          <details class="faq-item">
+            <summary><h3>Zašto je provera PDF-a vidljiva i bez lične karte?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Potpisivanje novog PDF-a koristi Sign ključ sa lične karte. Provera već potpisanog PDF-a ne traži karticu, pa je u razvojnoj verziji izdvojena kao samostalan alat kada je ubačena zdravstvena ili saobraćajna kartica, ili kada kartice nema.</p></div>
+          </details>
           <details class="faq-item">
             <summary><h3>Da li PDF potpis ima vremenski žig?</h3><span class="faq-disclosure-icon" aria-hidden="true"></span></summary>
             <div class="faq-answer"><p>Ne u prvom javnom izdanju. Aplikacija pravi kriptografski PAdES B-B potpis pomoću sertifikata sa lične karte, bez potvrde vremena od spoljnog servisa. Vremenski žig razmatramo kao kasniju opciju.</p></div>

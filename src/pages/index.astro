@@ -11,7 +11,7 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
 
 <SiteLayout
   title="Početna"
-  description="ČIP je besplatna macOS aplikacija za čitanje podataka sa elektronskih dokumenata. Počinje sa ličnom kartom; saobraćajna dozvola i zdravstvena kartica su u planu."
+  description="ČIP je besplatna macOS aplikacija za čitanje lične karte Srbije. Podrška za zdravstvenu karticu i saobraćajnu dozvolu razvija se za naredno izdanje."
   current="home"
 >
   <section class="hero">
@@ -35,13 +35,22 @@ const unsignedRelease = releaseData.latest?.unsigned ?? false;
   <section class="section">
     <div class="wrap">
       <h2>Šta možeš da uradiš</h2>
-      <p class="section-intro">Sve funkcije prvog izdanja namenjene su ličnoj karti Srbije. Podrška za druge dokumente planirana je za kasnije.</p>
+      <p class="section-intro">Verzija 0.1.0 namenjena je ličnoj karti Srbije. Podrška za druge kartice razvija se za naredno izdanje.</p>
       <div class="feature-grid">
         <div class="feature"><span class="feature-icon" aria-hidden="true">▣</span><h3>Pročitaj podatke</h3><p>Pregledaj podatke, adresu i fotografiju sa lične karte kroz jasan prikaz.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">✦</span><h3>Pregledaj sertifikate</h3><p>Razlikuj sertifikat za prijavu od sertifikata za potpisivanje.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">⌁</span><h3>Prijavi se u pregledaču</h3><p>Proveri da li macOS vidi karticu, token i MUP lanac poverenja.</p></div>
         <div class="feature"><span class="feature-icon" aria-hidden="true">✓</span><h3>Radi sa PDF-om</h3><p>Potpiši PDF ključem koji ostaje na kartici i proveri postojeći potpis.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="section development-section" aria-labelledby="in-development">
+    <div class="wrap">
+      <p class="development-eyebrow">Sledeće izdanje · u razvoju</p>
+      <h2 id="in-development">Jedna aplikacija za više kartica</h2>
+      <p class="section-intro">Razvojna verzija prepoznaje zdravstvenu karticu i saobraćajnu dozvolu i prikazuje njihove podatke u prilagođenom prikazu. Kod zdravstvene kartice omogućava i proveru datuma overe na sajtu RFZO-a nakon korisničkog zahteva.</p>
+      <p class="development-note">Ove mogućnosti nisu deo paketa 0.1.0 koji je trenutno ponuđen za preuzimanje. Potpisivanje PDF-a zahteva ličnu kartu; provera već potpisanog PDF-a biće zaseban alat koji radi i bez kartice.</p>
     </div>
   </section>
 

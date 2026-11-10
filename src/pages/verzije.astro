@@ -10,6 +10,7 @@ const releases = releaseData.releases as Release[];
 <SiteLayout title="Sve verzije" description="Preuzmi aktuelno i prethodna izdanja ČIP-a za macOS." current="releases">
   <header class="page-heading"><div class="wrap"><h1>Sve verzije</h1><p>Instalacioni paketi, datumi izdanja i otisci za proveru. Pre otvaranja paketa pročitaj <a href={`${base}uputstvo/#instalacija`}>uputstvo za instalaciju</a>.</p></div></header>
   <section class="section"><div class="wrap">
+    <p class="release-development-note">Podrška za zdravstvenu i saobraćajnu karticu razvija se za naredno izdanje i nije uključena u trenutno ponuđene pakete.</p>
     {releases.length ? (
       <div class="release-list">
         {releases.map((release) => (
